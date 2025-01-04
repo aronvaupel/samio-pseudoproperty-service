@@ -25,8 +25,8 @@ repositories {
 	maven {
 		url = uri("https://maven.pkg.github.com/aronvaupel/Commons")
 		credentials {
-			username = githubUsername ?: throw GradleException("GitHub username not provided")
-			password = githubToken ?: throw GradleException("GitHub token not provided")
+			username = githubUsername
+			password = githubToken
 		}
 	}
 
