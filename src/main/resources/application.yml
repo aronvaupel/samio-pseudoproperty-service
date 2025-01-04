@@ -1,0 +1,45 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: pseudoproperty-service
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+  datasource:
+    url: ${PSEUDOPROPERTYSERVICE_DATASOURCE_URL}
+    username: ${PSEUDOPROPERTYSERVICE_DATASOURCE_USERNAME}
+    password: ${PSEUDOPROPERTYSERVICE_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+      types:
+        registration: hypersistence-utils
+        json-dialect: true
+    show-sql: false
+    properties:
+      '[hypersistence.utils.enable_types_contributor]': false
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: beans
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka/
+
+cache:
+  memory:
+    maxSize: 1000000000
