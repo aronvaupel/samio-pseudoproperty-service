@@ -1,7 +1,7 @@
 package com.samio.pseudopropertyservice.persistence
 
-import com.ecommercedemo.common.model.concretion.pseudoProperty.PseudoProperty
 import com.ecommercedemo.common.persistence.abstraction.EntityRepository
+import com.samio.pseudopropertyservice.model.PseudoProperty
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
 import java.util.*
 
