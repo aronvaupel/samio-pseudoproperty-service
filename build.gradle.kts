@@ -15,22 +15,9 @@ java {
 	}
 }
 
-fun loadEnv(): Map<String, String> {
-	val envFile = file("${rootProject.projectDir}/.env")
-	if (!envFile.exists()) {
-		throw GradleException(".env file not found")
-	}
 
-	return envFile.readLines()
-		.filter { it.isNotBlank() && !it.startsWith("#") }
-		.map { it.split("=", limit = 2) }
-		.associate { it[0] to it.getOrElse(1) { "" } }
-}
-
-
-
-val githubUsername: String? = project.findProperty("githubUsername") as String? ?: System.getenv("GITHUB_USERNAME") ?: loadEnv()["GITHUB_USERNAME"]
-val githubToken: String? = project.findProperty("githubToken") as String? ?: System.getenv("GITHUB_TOKEN") ?: loadEnv()["GITHUB_TOKEN"]
+val githubUsername: String = project.findProperty("githubUsername") as String? ?: System.getenv("GITHUB_USERNAME")
+val githubToken: String = project.findProperty("githubToken") as String? ?: System.getenv("GITHUB_TOKEN")
 
 repositories {
 	mavenCentral()
@@ -65,7 +52,6 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-	implementation("io.github.cdimascio:dotenv-kotlin:6.2.2")
 	implementation("io.hypersistence:hypersistence-utils-hibernate-63:3.9.0")
 	implementation("org.hibernate:hibernate-core:6.6.3.Final")
 	implementation("org.postgresql:postgresql:42.7.2")
