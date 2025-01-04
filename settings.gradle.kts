@@ -1,1 +1,1 @@
-rootProject.name = "pseudopropertyservice"
+rootProject.name = "pseudoproperty-service"

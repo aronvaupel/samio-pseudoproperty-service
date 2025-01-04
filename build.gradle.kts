@@ -16,17 +16,14 @@ java {
 }
 
 
-val githubUsername: String = project.findProperty("githubUsername") as String? ?: System.getenv("GITHUB_USERNAME")
-val githubToken: String = project.findProperty("githubToken") as String? ?: System.getenv("GITHUB_TOKEN")
-
 repositories {
 	mavenCentral()
 
 	maven {
 		url = uri("https://maven.pkg.github.com/aronvaupel/Commons")
 		credentials {
-			username = githubUsername
-			password = githubToken
+			username = project.findProperty("githubUsername") as String? ?: System.getenv("GITHUB_USERNAME")
+			password = project.findProperty("githubToken") as String? ?: System.getenv("GITHUB_TOKEN")
 		}
 	}
 
