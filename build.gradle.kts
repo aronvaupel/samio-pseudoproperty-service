@@ -39,11 +39,10 @@ repositories {
 
 extra["springCloudVersion"] = "2023.0.3"
 
-val isDevProfile: Boolean = project.hasProperty("spring.profiles.active") && project.property("spring.profiles.active") == "dev"
 val isLocalProfile: Boolean = project.hasProperty("spring.profiles.active") && project.property("spring.profiles.active") == "local"
 
 dependencies {
-	implementation("com.github.aronvaupel:commons:6.5.0")
+	implementation("com.github.aronvaupel:commons:6.5.1")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -54,7 +53,7 @@ dependencies {
 	implementation("org.postgresql:postgresql:42.7.2")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
-	if (!isDevProfile && !isLocalProfile) {
+	if (!isLocalProfile) {
 		implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	}
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
