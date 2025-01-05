@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication(scanBasePackages = ["com.ecommercedemo.common", "com.samio.pseudopropertyservice"])
-@EntityScan("com.samio.pseudopropertyservice.model", "com.ecommercedemo.common.model")
+@EntityScan("com.samio.pseudopropertyservice.model")
 @EnableJpaRepositories("com.samio.pseudopropertyservice.persistence")
 @EnableScheduling
 class PseudopropertyserviceApplication
