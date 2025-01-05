@@ -43,3 +43,8 @@ eureka:
 cache:
   memory:
     maxSize: 1000000000
+
+logging:
+  level:
+    org.springframework.context.annotation: DEBUG
+    org.springframework.boot.autoconfigure: DEBUG
