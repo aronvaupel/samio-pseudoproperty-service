@@ -6,6 +6,5 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
 import java.util.*
 
 @Suppress("unused")
-@ConditionalOnClass(name = ["org.springframework.data.jpa.repository.JpaRepository"])
 interface PseudoPropertyRepository : EntityRepository<PseudoProperty, UUID>
 

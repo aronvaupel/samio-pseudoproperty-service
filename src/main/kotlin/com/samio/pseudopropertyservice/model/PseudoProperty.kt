@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
 
 @Suppress("unused")
 @Entity
-@ConditionalOnClass(name = ["org.springframework.data.jpa.repository.JpaRepository"])
 class PseudoProperty(
     @NotBlank
     @Column(name = "entity_simple_name", nullable = false)

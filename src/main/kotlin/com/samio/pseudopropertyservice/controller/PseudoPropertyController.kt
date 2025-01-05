@@ -10,5 +10,4 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/pseudo-properties")
 @ControllerFor(PseudoProperty::class)
-@ConditionalOnClass(name = ["org.springframework.data.jpa.repository.JpaRepository"])
 class PseudoPropertyController: RestControllerTemplate<PseudoProperty>()

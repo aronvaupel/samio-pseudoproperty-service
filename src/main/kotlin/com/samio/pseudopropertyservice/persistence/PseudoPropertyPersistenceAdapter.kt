@@ -7,5 +7,4 @@ import org.springframework.stereotype.Service
 
 @Service
 @PersistenceAdapterFor(com.samio.pseudopropertyservice.model.PseudoProperty::class)
-@ConditionalOnClass(name = ["org.springframework.data.jpa.repository.JpaRepository"])
 class PseudoPropertyPersistenceAdapter : EntityPersistenceAdapter<com.samio.pseudopropertyservice.model.PseudoProperty>()
