@@ -6,7 +6,7 @@ spring:
   kafka:
     bootstrap-servers: kafka:9092
   datasource:
-    url: jdbc:postgresql://postgresql_user-service:5432/PseudopropertyServiceDB
+    url: jdbc:postgresql://postgresql_pseudoproperty-service:5432/PseudopropertyServiceDB
     username: username
     password: password
   jpa:
