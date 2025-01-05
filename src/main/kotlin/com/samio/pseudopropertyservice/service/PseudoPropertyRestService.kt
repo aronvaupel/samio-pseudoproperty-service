@@ -10,6 +10,5 @@ import org.springframework.stereotype.Service
 @Transactional
 @Service
 @RestServiceFor(PseudoProperty::class)
-@ConditionalOnClass(name = ["org.springframework.data.jpa.repository.JpaRepository"])
 class PseudoPropertyRestService(
 ) : RestServiceTemplate<PseudoProperty>()
