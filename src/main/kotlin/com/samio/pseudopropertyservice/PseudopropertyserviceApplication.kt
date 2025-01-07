@@ -10,24 +10,14 @@ import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication
 @ComponentScan(
-    basePackages = ["com.samio.pseudopropertyservice", "com.ecommercedemo.common"],
-    excludeFilters = [ComponentScan.Filter(
-        type = FilterType.REGEX,
-        pattern = ["com\\.ecommercedemo\\.common\\.model\\.concretion\\._pseudoProperty\\..*"]
-    )]
-)
+    basePackages = ["com.samio.pseudopropertyservice", "com.ecommercedemo.common"])
 @EntityScan(
     "com.samio.pseudopropertyservice.model",
     "com.ecommercedemo.common.model.concretion.permission",
     "com.ecommercedemo.common.model.concretion.permissionuserassociation"
 )
 @EnableJpaRepositories(
-    basePackages = ["com.samio.pseudopropertyservice.persistence"],
-    excludeFilters = [ComponentScan.Filter(
-        type = FilterType.REGEX,
-        pattern = ["com\\.ecommercedemo\\.common\\.persistence\\.concretion\\._pseudoProperty\\..*"]
-    )]
-)
+    basePackages = ["com.samio.pseudopropertyservice.persistence", "com.ecommercedemo.common.persistence"])
 @EnableScheduling
 class PseudopropertyserviceApplication
 
