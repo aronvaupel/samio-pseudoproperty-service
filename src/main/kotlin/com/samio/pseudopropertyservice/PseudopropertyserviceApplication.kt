@@ -10,23 +10,27 @@ import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication
 @ComponentScan(
-	basePackages = ["com.samio.pseudopropertyservice", "com.ecommercedemo.common"],
-	excludeFilters = [ComponentScan.Filter(
-		type = FilterType.REGEX,
-		pattern = ["com\\.ecommercedemo\\.common\\.model\\.concretion\\._pseudoProperty\\..*"]
-	)]
+    basePackages = ["com.samio.pseudopropertyservice", "com.ecommercedemo.common"],
+    excludeFilters = [ComponentScan.Filter(
+        type = FilterType.REGEX,
+        pattern = ["com\\.ecommercedemo\\.common\\.model\\.concretion\\._pseudoProperty\\..*"]
+    )]
 )
-@EntityScan("com.samio.pseudopropertyservice.model")
+@EntityScan(
+    "com.samio.pseudopropertyservice.model",
+    "com.ecommercedemo.common.model.concretion.permission",
+    "com.ecommercedemo.common.model.concretion.permissionuserassociation"
+)
 @EnableJpaRepositories(
-	basePackages = ["com.samio.pseudopropertyservice.persistence"],
-	excludeFilters = [ComponentScan.Filter(
-		type = FilterType.REGEX,
-		pattern = ["com\\.ecommercedemo\\.common\\.persistence\\..*"]
-	)]
+    basePackages = ["com.samio.pseudopropertyservice.persistence"],
+    excludeFilters = [ComponentScan.Filter(
+        type = FilterType.REGEX,
+        pattern = ["com\\.ecommercedemo\\.common\\.persistence\\.concretion\\._pseudoProperty\\..*"]
+    )]
 )
 @EnableScheduling
 class PseudopropertyserviceApplication
 
 fun main(args: Array<String>) {
-	runApplication<PseudopropertyserviceApplication>(*args)
+    runApplication<PseudopropertyserviceApplication>(*args)
 }
