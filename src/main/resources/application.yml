@@ -5,6 +5,8 @@ spring:
     name: pseudoproperty-service
   kafka:
     bootstrap-servers: kafka:9092
+    consumer:
+      auto-offset-reset: earliest
   datasource:
     url: jdbc:postgresql://postgresql_pseudoproperty-service:5432/PseudopropertyServiceDB
     username: username
