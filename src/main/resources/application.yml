@@ -54,3 +54,8 @@ logging:
     org.apache.kafka: WARN
 
 permissions: true
+
+security:
+  service-restriction:
+    roles:
+      - SUPER_ADMIN
