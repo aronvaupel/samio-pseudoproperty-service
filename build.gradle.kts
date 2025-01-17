@@ -42,7 +42,7 @@ extra["springCloudVersion"] = "2023.0.3"
 val isLocalProfile: Boolean = project.hasProperty("spring.profiles.active") && project.property("spring.profiles.active") == "local"
 
 dependencies {
-	implementation("com.github.aronvaupel:commons:7.2.10")
+	implementation("com.github.aronvaupel:commons:7.2.11")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

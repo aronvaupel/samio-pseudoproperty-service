@@ -55,5 +55,6 @@ logging:
 
 permissions: true
 
-access-restricted-to:
-  - SUPER_ADMIN
+service-level-access:
+  restricted-to:
+    - SUPER_ADMIN
