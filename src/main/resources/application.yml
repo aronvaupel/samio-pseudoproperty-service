@@ -55,5 +55,5 @@ logging:
 
 permissions: true
 
-service-restricted-to-roles:
+access-restricted-to:
   - SUPER_ADMIN
