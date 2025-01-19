@@ -42,7 +42,7 @@ extra["springCloudVersion"] = "2023.0.3"
 val isLocalProfile: Boolean = project.hasProperty("spring.profiles.active") && project.property("spring.profiles.active") == "local"
 
 dependencies {
-	implementation("com.github.aronvaupel:commons:7.4.4")
+	implementation("com.github.aronvaupel:commons:7.4.5")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -51,6 +51,9 @@ dependencies {
 	implementation("io.hypersistence:hypersistence-utils-hibernate-63:3.9.0")
 	implementation("org.hibernate:hibernate-core:6.6.3.Final")
 	implementation("org.postgresql:postgresql:42.7.2")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.2")
+	implementation("org.webjars:webjars-locator-core")
+	implementation("org.webjars:swagger-ui")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	if (!isLocalProfile) {
